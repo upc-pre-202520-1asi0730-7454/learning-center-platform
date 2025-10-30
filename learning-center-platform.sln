@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACME.LearningCenterPlatform.API", "ACME.LearningCenterPlatform.API\ACME.LearningCenterPlatform.API.csproj", "{B505C4A8-B348-4552-BDF0-8C96A5C2C188}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B505C4A8-B348-4552-BDF0-8C96A5C2C188}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B505C4A8-B348-4552-BDF0-8C96A5C2C188}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B505C4A8-B348-4552-BDF0-8C96A5C2C188}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B505C4A8-B348-4552-BDF0-8C96A5C2C188}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
