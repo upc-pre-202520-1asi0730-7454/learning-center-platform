@@ -1,27 +1,11 @@
-using ACME.LearningCenterPlatform.API.Profiles.Application.Internal.CommandServices;
-using ACME.LearningCenterPlatform.API.Profiles.Application.Internal.QueryServices;
-using ACME.LearningCenterPlatform.API.Profiles.Domain.Repositories;
-using ACME.LearningCenterPlatform.API.Profiles.Domain.Services;
 using ACME.LearningCenterPlatform.API.Profiles.Infrastructure.Interfaces.ASP.Configuration.Extensions;
-using ACME.LearningCenterPlatform.API.Profiles.Infrastructure.Persistence.EFC.Repositories;
-using ACME.LearningCenterPlatform.API.Publishing.Application.Internal.CommandServices;
-using ACME.LearningCenterPlatform.API.Publishing.Application.Internal.QueryServices;
-using ACME.LearningCenterPlatform.API.Publishing.Domain.Repositories;
-using ACME.LearningCenterPlatform.API.Publishing.Domain.Services;
 using ACME.LearningCenterPlatform.API.Publishing.Infrastructure.Interfaces.ASP.Configuration.Extensions;
-using ACME.LearningCenterPlatform.API.Publishing.Infrastructure.Persistence.EFC.Repositories;
-using ACME.LearningCenterPlatform.API.Shared.Domain.Repositories;
 using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Documentation.OpenApi.Configuration.Extensions;
 using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Interfaces.ASP.Configuration;
 using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Interfaces.ASP.Configuration.Extensions;
-using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Mediator.Cortex.Configuration;
 using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Mediator.Cortex.Configuration.Extensions;
 using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Persistence.EFC.Configuration;
-using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Persistence.EFC.Repositories;
-using Cortex.Mediator.Commands;
-using Cortex.Mediator.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -72,12 +56,9 @@ using (var scope = app.Services.CreateScope())
     context.Database.EnsureCreated();
 }
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+// Configure OpenAPI/Swagger middleware
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
