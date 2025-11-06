@@ -7,6 +7,7 @@ using ACME.LearningCenterPlatform.API.Publishing.Application.Internal.CommandSer
 using ACME.LearningCenterPlatform.API.Publishing.Application.Internal.QueryServices;
 using ACME.LearningCenterPlatform.API.Publishing.Domain.Repositories;
 using ACME.LearningCenterPlatform.API.Publishing.Domain.Services;
+using ACME.LearningCenterPlatform.API.Publishing.Infrastructure.Interfaces.ASP.Configuration.Extensions;
 using ACME.LearningCenterPlatform.API.Publishing.Infrastructure.Persistence.EFC.Repositories;
 using ACME.LearningCenterPlatform.API.Shared.Domain.Repositories;
 using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Interfaces.ASP.Configuration;
@@ -80,9 +81,7 @@ builder.Services.AddScoped<ITutorialCommandService, TutorialCommandService>();
 builder.Services.AddScoped<ITutorialQueryService, TutorialQueryService>();
 
 // Profiles Bounded Context Dependency Injection Configuration
-builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
-builder.Services.AddScoped<IProfileCommandService, ProfileCommandService>();
-builder.Services.AddScoped<IProfileQueryService, ProfileQueryService>();
+builder.AddProfilesContextServices();
 
 // Mediator Configuration
 
