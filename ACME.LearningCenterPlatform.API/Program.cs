@@ -5,41 +5,23 @@ using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Interfaces.ASP.Confi
 using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Interfaces.ASP.Configuration.Extensions;
 using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Mediator.Cortex.Configuration.Extensions;
 using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Persistence.EFC.Configuration;
+using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Persistence.EFC.Configuration.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers(options => options.Conventions.Add(new KebabCaseRouteNamingConvention()));
 
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-if (connectionString == null) throw new InvalidOperationException("Connection string not found.");
-
-builder.Services.AddDbContext<AppDbContext>(options =>
-{
-    if (builder.Environment.IsDevelopment())
-        options.UseMySQL(connectionString)
-            .LogTo(Console.WriteLine, LogLevel.Information)
-            .EnableSensitiveDataLogging()
-            .EnableDetailedErrors();
-    else if (builder.Environment.IsProduction())
-        options.UseMySQL(connectionString)
-            .LogTo(Console.WriteLine, LogLevel.Error);
-});
+// Database Configuration
+builder.AddDatabaseConfigurationServices();
 
 // OpenAPI/Swagger Configuration
 builder.AddOpenApiConfigurationServices();
 
 // Dependency Injection
 
-// Shared Bounded Context
 builder.AddSharedContextServices();
-
-// Publishing Bounded Context
 builder.AddPublishingContextServices();
-
-// Profiles Bounded Context Dependency Injection Configuration
 builder.AddProfilesContextServices();
 
 // Mediator Configuration
@@ -48,13 +30,7 @@ builder.AddCortexMediatorServices();
 var app = builder.Build();
 
 // Verify if the database exists and create it if it doesn't
-using (var scope = app.Services.CreateScope())
-{
-    var services = scope.ServiceProvider;
-    var context = services.GetRequiredService<AppDbContext>();
-
-    context.Database.EnsureCreated();
-}
+app.EnsureDatabaseCreated();
 
 // Configure OpenAPI/Swagger middleware
 app.UseSwagger();
