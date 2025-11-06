@@ -8,9 +8,11 @@ using ACME.LearningCenterPlatform.API.Publishing.Application.Internal.CommandSer
 using ACME.LearningCenterPlatform.API.Publishing.Application.Internal.QueryServices;
 using ACME.LearningCenterPlatform.API.Publishing.Domain.Repositories;
 using ACME.LearningCenterPlatform.API.Publishing.Domain.Services;
+using ACME.LearningCenterPlatform.API.Publishing.Infrastructure.Interfaces.ASP.Configuration.Extensions;
 using ACME.LearningCenterPlatform.API.Publishing.Infrastructure.Persistence.EFC.Repositories;
 using ACME.LearningCenterPlatform.API.Shared.Domain.Repositories;
 using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Interfaces.ASP.Configuration;
+using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Interfaces.ASP.Configuration.Extensions;
 using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Mediator.Cortex.Configuration;
 using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Persistence.EFC.Configuration;
 using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Persistence.EFC.Repositories;
@@ -70,15 +72,10 @@ builder.Services.AddSwaggerGen(options =>
 // Dependency Injection
 
 // Shared Bounded Context
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.AddSharedContextServices();
 
 // Publishing Bounded Context
-builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
-builder.Services.AddScoped<ITutorialRepository, TutorialRepository>();
-builder.Services.AddScoped<ICategoryCommandService, CategoryCommandService>();
-builder.Services.AddScoped<ICategoryQueryService, CategoryQueryService>();
-builder.Services.AddScoped<ITutorialCommandService, TutorialCommandService>();
-builder.Services.AddScoped<ITutorialQueryService, TutorialQueryService>();
+builder.AddPublishingContextServices();
 
 // Profiles Bounded Context Dependency Injection Configuration
 builder.AddProfilesContextServices();
