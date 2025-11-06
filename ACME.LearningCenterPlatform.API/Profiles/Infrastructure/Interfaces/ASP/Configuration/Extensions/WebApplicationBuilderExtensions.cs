@@ -4,7 +4,7 @@ using ACME.LearningCenterPlatform.API.Profiles.Domain.Repositories;
 using ACME.LearningCenterPlatform.API.Profiles.Domain.Services;
 using ACME.LearningCenterPlatform.API.Profiles.Infrastructure.Persistence.EFC.Repositories;
 
-namespace ACME.LearningCenterPlatform.API.Publishing.Infrastructure.Interfaces.ASP.Configuration.Extensions;
+namespace ACME.LearningCenterPlatform.API.Profiles.Infrastructure.Interfaces.ASP.Configuration.Extensions;
 
 public static class WebApplicationBuilderExtensions
 {

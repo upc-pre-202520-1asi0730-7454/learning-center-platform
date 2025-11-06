@@ -2,12 +2,12 @@ using ACME.LearningCenterPlatform.API.Profiles.Application.Internal.CommandServi
 using ACME.LearningCenterPlatform.API.Profiles.Application.Internal.QueryServices;
 using ACME.LearningCenterPlatform.API.Profiles.Domain.Repositories;
 using ACME.LearningCenterPlatform.API.Profiles.Domain.Services;
+using ACME.LearningCenterPlatform.API.Profiles.Infrastructure.Interfaces.ASP.Configuration.Extensions;
 using ACME.LearningCenterPlatform.API.Profiles.Infrastructure.Persistence.EFC.Repositories;
 using ACME.LearningCenterPlatform.API.Publishing.Application.Internal.CommandServices;
 using ACME.LearningCenterPlatform.API.Publishing.Application.Internal.QueryServices;
 using ACME.LearningCenterPlatform.API.Publishing.Domain.Repositories;
 using ACME.LearningCenterPlatform.API.Publishing.Domain.Services;
-using ACME.LearningCenterPlatform.API.Publishing.Infrastructure.Interfaces.ASP.Configuration.Extensions;
 using ACME.LearningCenterPlatform.API.Publishing.Infrastructure.Persistence.EFC.Repositories;
 using ACME.LearningCenterPlatform.API.Shared.Domain.Repositories;
 using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Interfaces.ASP.Configuration;
