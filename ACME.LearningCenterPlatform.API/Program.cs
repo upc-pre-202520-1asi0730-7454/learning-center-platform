@@ -15,6 +15,7 @@ using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Documentation.OpenAp
 using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Interfaces.ASP.Configuration;
 using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Interfaces.ASP.Configuration.Extensions;
 using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Mediator.Cortex.Configuration;
+using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Mediator.Cortex.Configuration.Extensions;
 using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Persistence.EFC.Configuration;
 using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Persistence.EFC.Repositories;
 using Cortex.Mediator.Commands;
@@ -58,19 +59,7 @@ builder.AddPublishingContextServices();
 builder.AddProfilesContextServices();
 
 // Mediator Configuration
-
-// Add Mediator Injection Configuration
-builder.Services.AddScoped(typeof(ICommandPipelineBehavior<>), typeof(LoggingCommandBehavior<>));
-
-// Add Cortex Mediator for Event Handling
-builder.Services.AddCortexMediator(
-    configuration: builder.Configuration,
-    handlerAssemblyMarkerTypes: [typeof(Program)], configure: options =>
-    {
-        options.AddOpenCommandPipelineBehavior(typeof(LoggingCommandBehavior<>));
-        //options.AddDefaultBehaviors();
-    });
-
+builder.AddCortexMediatorServices();
 
 var app = builder.Build();
 
