@@ -7,14 +7,12 @@ using ACME.LearningCenterPlatform.API.Shared.Domain.Repositories;
 
 namespace ACME.LearningCenterPlatform.API.IAM.Application.Internal.CommandServices;
 
-/**
- * <summary>
- *     The user command service
- * </summary>
- * <remarks>
- *     This class is used to handle user commands
- * </remarks>
- */
+/// <summary>
+///     The user command service
+/// </summary>
+/// <remarks>
+///     This class is used to handle user commands
+/// </remarks>
 public class UserCommandService(
     IUserRepository userRepository,
     ITokenService tokenService,
@@ -22,13 +20,11 @@ public class UserCommandService(
     IUnitOfWork unitOfWork)
     : IUserCommandService
 {
-    /**
-     * <summary>
-     *     Handle sign in command
-     * </summary>
-     * <param name="command">The sign in command</param>
-     * <returns>The authenticated user and the JWT token</returns>
-     */
+    /// <summary>
+    ///     Handle sign in command
+    /// </summary>
+    /// <param name="command">The sign in command</param>
+    /// <returns>The authenticated user and the token</returns>
     public async Task<(User user, string token)> Handle(SignInCommand command)
     {
         var user = await userRepository.FindByUsernameAsync(command.Username);
@@ -41,13 +37,10 @@ public class UserCommandService(
         return (user, token);
     }
 
-    /**
-     * <summary>
-     *     Handle sign up command
-     * </summary>
-     * <param name="command">The sign up command</param>
-     * <returns>A confirmation message on successful creation.</returns>
-     */
+    /// <summary>
+    ///     Handle sign up command
+    /// </summary>
+    /// <param name="command">The sign up command</param>
     public async Task Handle(SignUpCommand command)
     {
         if (userRepository.ExistsByUsername(command.Username))

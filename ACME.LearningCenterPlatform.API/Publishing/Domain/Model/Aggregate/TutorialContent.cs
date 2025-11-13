@@ -16,17 +16,34 @@ public partial class Tutorial : IPublishable
         Status = EPublishingStatus.Draft;
     }
 
+    /// <summary>
+    ///     Gets the collection of assets in the tutorial
+    /// </summary>
     public ICollection<Asset> Assets { get; }
 
+    /// <summary>
+    ///     Gets the publishing status of the tutorial
+    /// </summary>
     public EPublishingStatus Status { get; protected set; }
 
-
+    /// <summary>
+    ///     Gets a value indicating whether the tutorial is readable
+    /// </summary>
     public bool Readable => HasReadableAssets;
 
+    /// <summary>
+    ///     Gets a value indicating whether the tutorial is viewable
+    /// </summary>
     public bool Viewable => HasViewableAssets;
 
+    /// <summary>
+    ///     Gets a value indicating whether the tutorial has readable assets
+    /// </summary>
     public bool HasReadableAssets => Assets.Any(asset => asset.Readable);
 
+    /// <summary>
+    ///     Gets a value indicating whether the tutorial has viewable assets
+    /// </summary>
     public bool HasViewableAssets => Assets.Any(asset => asset.Viewable);
 
 

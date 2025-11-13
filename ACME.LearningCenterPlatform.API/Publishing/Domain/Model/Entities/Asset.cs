@@ -10,12 +10,34 @@ namespace ACME.LearningCenterPlatform.API.Publishing.Domain.Model.Entities;
 /// </param>
 public partial class Asset(EAssetType type) : IPublishable
 {
+    /// <summary>
+    ///     Gets the unique identifier of the asset.
+    /// </summary>
     public int Id { get; }
 
+    /// <summary>
+    ///     Gets the asset identifier.
+    /// </summary>
     public AcmeAssetIdentifier AssetIdentifier { get; private set; } = new();
+    
+    /// <summary>
+    ///     Gets the publishing status of the asset.
+    /// </summary>
     public EPublishingStatus Status { get; private set; } = EPublishingStatus.Draft;
+    
+    /// <summary>
+    ///     Gets the type of the asset.
+    /// </summary>
     public EAssetType Type { get; private set; } = type;
+    
+    /// <summary>
+    ///     Gets a value indicating whether the asset is readable.
+    /// </summary>
     public virtual bool Readable => false;
+    
+    /// <summary>
+    ///     Gets a value indicating whether the asset is viewable.
+    /// </summary>
     public virtual bool Viewable => false;
 
     /// <summary>

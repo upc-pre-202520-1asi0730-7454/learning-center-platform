@@ -31,6 +31,12 @@ public interface IBaseRepository<TEntity>
     /// </returns>
     Task<TEntity?> FindByIdAsync(int id);
 
+    /// <summary>
+    ///     Update an entity in the repository
+    /// </summary>
+    /// <param name="entity">
+    ///     The entity to update
+    /// </param>
     void Update(TEntity entity);
 
     /// <summary>

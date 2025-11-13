@@ -9,14 +9,12 @@ using Swashbuckle.AspNetCore.Annotations;
 
 namespace ACME.LearningCenterPlatform.API.IAM.Interfaces.REST;
 
-/**
- * <summary>
- *     The user's controller
- * </summary>
- * <remarks>
- *     This class is used to handle user requests
- * </remarks>
- */
+/// <summary>
+///     The user's controller
+/// </summary>
+/// <remarks>
+///     This class is used to handle user requests
+/// </remarks>
 [Authorize]
 [ApiController]
 [Route("api/v1/[controller]")]
@@ -24,13 +22,11 @@ namespace ACME.LearningCenterPlatform.API.IAM.Interfaces.REST;
 [SwaggerTag("Available User endpoints")]
 public class UsersController(IUserQueryService userQueryService) : ControllerBase
 {
-    /**
-     * <summary>
-     *     Get user by id endpoint. It allows to get a user by id
-     * </summary>
-     * <param name="id">The user id</param>
-     * <returns>The user resource</returns>
-     */
+    /// <summary>
+    ///     Get user by id endpoint. It allows to get a user by id
+    /// </summary>
+    /// <param name="id">The user id</param>
+    /// <returns>The user resource</returns>
     [HttpGet("{id}")]
     [SwaggerOperation(
         Summary = "Get a user by its id",
@@ -45,12 +41,10 @@ public class UsersController(IUserQueryService userQueryService) : ControllerBas
         return Ok(userResource);
     }
 
-    /**
-     * <summary>
-     *     Get all users' endpoint. It allows getting all users
-     * </summary>
-     * <returns>The user resources</returns>
-     */
+    /// <summary>
+    ///     Get all users' endpoint. It allows getting all users
+    /// </summary>
+    /// <returns>The user resources</returns>
     [HttpGet]
     [SwaggerOperation(
         Summary = "Get all users",

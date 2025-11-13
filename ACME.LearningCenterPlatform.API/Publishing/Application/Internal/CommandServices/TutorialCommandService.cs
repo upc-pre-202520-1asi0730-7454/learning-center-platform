@@ -6,6 +6,9 @@ using ACME.LearningCenterPlatform.API.Shared.Domain.Repositories;
 
 namespace ACME.LearningCenterPlatform.API.Publishing.Application.Internal.CommandServices;
 
+/// <summary>
+///     Represents the tutorial command service in the ACME Learning Center Platform.
+/// </summary>
 public class TutorialCommandService(
     ITutorialRepository tutorialRepository,
     ICategoryRepository categoryRepository,

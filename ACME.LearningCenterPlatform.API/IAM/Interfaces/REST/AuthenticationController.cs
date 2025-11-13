@@ -8,6 +8,9 @@ using Swashbuckle.AspNetCore.Annotations;
 
 namespace ACME.LearningCenterPlatform.API.IAM.Interfaces.REST;
 
+/// <summary>
+/// Controller for authentication operations.
+/// </summary>
 [Authorize]
 [ApiController]
 [Route("api/v1/[controller]")]
@@ -15,13 +18,11 @@ namespace ACME.LearningCenterPlatform.API.IAM.Interfaces.REST;
 [SwaggerTag("Available Authentication endpoints")]
 public class AuthenticationController(IUserCommandService userCommandService) : ControllerBase
 {
-    /**
-     * <summary>
-     *     Sign in endpoint. It allows authenticating a user
-     * </summary>
-     * <param name="signInResource">The sign-in resource containing username and password.</param>
-     * <returns>The authenticated user resource, including a JWT token</returns>
-     */
+    /// <summary>
+    ///     Sign in endpoint. It allows authenticating a user
+    /// </summary>
+    /// <param name="signInResource">The sign-in resource containing username and password.</param>
+    /// <returns>The authenticated user resource, including a JWT token</returns>
     [HttpPost("sign-in")]
     [AllowAnonymous]
     [SwaggerOperation(
@@ -39,13 +40,11 @@ public class AuthenticationController(IUserCommandService userCommandService) : 
         return Ok(resource);
     }
 
-    /**
-     * <summary>
-     *     Sign up endpoint. It allows creating a new user
-     * </summary>
-     * <param name="signUpResource">The sign-up resource containing username and password.</param>
-     * <returns>A confirmation message on successful creation.</returns>
-     */
+    /// <summary>
+    ///     Sign up endpoint. It allows creating a new user
+    /// </summary>
+    /// <param name="signUpResource">The sign-up resource containing username and password.</param>
+    /// <returns>A confirmation message on successful creation.</returns>
     [HttpPost("sign-up")]
     [AllowAnonymous]
     [SwaggerOperation(

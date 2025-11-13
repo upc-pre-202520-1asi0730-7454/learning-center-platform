@@ -26,11 +26,24 @@ public class Category
         Name = name;
     }
 
+    /// <summary>
+    ///     Constructor for the category entity from a create command
+    /// </summary>
+    /// <param name="command">
+    ///     The create category command
+    /// </param>
     public Category(CreateCategoryCommand command)
     {
         Name = command.Name;
     }
 
+    /// <summary>
+    ///     Gets or sets the unique identifier of the category
+    /// </summary>
     public int Id { get; set; }
+    
+    /// <summary>
+    ///     Gets or sets the name of the category
+    /// </summary>
     public string Name { get; set; }
 }
