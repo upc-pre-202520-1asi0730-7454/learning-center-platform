@@ -17,17 +17,16 @@ public static class WebApplicationBuilderExtensions
     public static void AddIamContextServices(this WebApplicationBuilder builder)
     {
         // TokenSettings Configuration
-        
+
         builder.Services.Configure<TokenSettings>(builder.Configuration.GetSection("TokenSettings"));
 
         // IAM Bounded Context Injection Configuration
-        
+
         builder.Services.AddScoped<IUserRepository, UserRepository>();
         builder.Services.AddScoped<IUserCommandService, UserCommandService>();
         builder.Services.AddScoped<IUserQueryService, UserQueryService>();
         builder.Services.AddScoped<ITokenService, TokenService>();
         builder.Services.AddScoped<IHashingService, HashingService>();
         builder.Services.AddScoped<IIamContextFacade, IamContextFacade>();
-
     }
 }

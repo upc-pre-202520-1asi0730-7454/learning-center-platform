@@ -21,7 +21,7 @@ builder.AddOpenApiConfigurationServices();
 builder.AddSharedContextServices();
 builder.AddPublishingContextServices();
 builder.AddProfilesContextServices();
-builder.AddIamContextServices(); 
+builder.AddIamContextServices();
 
 // Mediator Configuration
 builder.AddCortexMediatorServices();

@@ -34,7 +34,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="IAM\Application\ACL\" />
+        <Folder Include="IAM\Application\ACL\"/>
     </ItemGroup>
 
 </Project>

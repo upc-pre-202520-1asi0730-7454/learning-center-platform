@@ -13,6 +13,5 @@ public static class WebApplicationBuilderExtensions
         builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
         builder.Services.AddScoped<IProfileCommandService, ProfileCommandService>();
         builder.Services.AddScoped<IProfileQueryService, ProfileQueryService>();
-
     }
 }

@@ -1,12 +1,17 @@
 namespace ACME.LearningCenterPlatform.API.Profiles.Domain.Model.ValueObjects;
 
 /// <summary>
-/// Email address value object 
+///     Email address value object
 /// </summary>
 /// <param name="Address">
-/// The email address
+///     The email address
 /// </param>
 public record EmailAddress(string Address)
 {
-    public EmailAddress() : this(string.Empty) { }
+    /// <summary>
+    ///     Initializes a new instance of the <see cref="EmailAddress" /> record with an empty address.
+    /// </summary>
+    public EmailAddress() : this(string.Empty)
+    {
+    }
 }
