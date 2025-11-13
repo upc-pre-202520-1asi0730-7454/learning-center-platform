@@ -1,3 +1,4 @@
+using ACME.LearningCenterPlatform.API.IAM.Infrastructure.Interfaces.ASP.Configuration.Extensions;
 using ACME.LearningCenterPlatform.API.Profiles.Infrastructure.Interfaces.ASP.Configuration.Extensions;
 using ACME.LearningCenterPlatform.API.Publishing.Infrastructure.Interfaces.ASP.Configuration.Extensions;
 using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Documentation.OpenApi.Configuration.Extensions;
@@ -20,6 +21,7 @@ builder.AddOpenApiConfigurationServices();
 builder.AddSharedContextServices();
 builder.AddPublishingContextServices();
 builder.AddProfilesContextServices();
+builder.AddIamContextServices(); 
 
 // Mediator Configuration
 builder.AddCortexMediatorServices();
