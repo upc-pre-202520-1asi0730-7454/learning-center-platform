@@ -14,7 +14,7 @@ public interface ITokenService
 {
     /**
      * <summary>
-     *     Generate a JWT token
+     *     Generate a Token
      * </summary>
      * <param name="user">The user to generate the token for</param>
      * <returns>The generated token</returns>
@@ -23,7 +23,7 @@ public interface ITokenService
 
     /**
      * <summary>
-     *     Validate a JWT token
+     *     Validate a Token
      * </summary>
      * <param name="token">The token to validate</param>
      * <returns>The user id if the token is valid, null otherwise</returns>
