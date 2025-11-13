@@ -1,7 +1,7 @@
 using ACME.LearningCenterPlatform.API.IAM.Application.ACL.Services;
 using ACME.LearningCenterPlatform.API.IAM.Application.Internal.CommandServices;
-using ACME.LearningCenterPlatform.API.IAM.Application.Internal.OutboundServices;
 using ACME.LearningCenterPlatform.API.IAM.Application.Internal.QueryServices;
+using ACME.LearningCenterPlatform.API.IAM.Application.OutboundServices;
 using ACME.LearningCenterPlatform.API.IAM.Domain.Repositories;
 using ACME.LearningCenterPlatform.API.IAM.Domain.Services;
 using ACME.LearningCenterPlatform.API.IAM.Infrastructure.Hashing.BCrypt.Services;

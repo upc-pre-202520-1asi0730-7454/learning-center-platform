@@ -1,4 +1,4 @@
-using ACME.LearningCenterPlatform.API.IAM.Application.Internal.OutboundServices;
+using ACME.LearningCenterPlatform.API.IAM.Application.OutboundServices;
 using ACME.LearningCenterPlatform.API.IAM.Domain.Model.Aggregates;
 using ACME.LearningCenterPlatform.API.IAM.Domain.Model.Commands;
 using ACME.LearningCenterPlatform.API.IAM.Domain.Repositories;

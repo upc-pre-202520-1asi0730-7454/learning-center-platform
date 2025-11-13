@@ -1,4 +1,4 @@
-namespace ACME.LearningCenterPlatform.API.IAM.Application.Internal.OutboundServices;
+namespace ACME.LearningCenterPlatform.API.IAM.Application.OutboundServices;
 
 /**
  * <summary>

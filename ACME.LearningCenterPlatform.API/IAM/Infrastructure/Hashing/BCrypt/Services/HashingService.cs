@@ -1,4 +1,4 @@
-using ACME.LearningCenterPlatform.API.IAM.Application.Internal.OutboundServices;
+using ACME.LearningCenterPlatform.API.IAM.Application.OutboundServices;
 using BCryptNet = BCrypt.Net.BCrypt;
 
 namespace ACME.LearningCenterPlatform.API.IAM.Infrastructure.Hashing.BCrypt.Services;
