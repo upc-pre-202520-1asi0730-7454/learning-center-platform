@@ -11,11 +11,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers(options => options.Conventions.Add(new KebabCaseRouteNamingConvention()));
 
+
 // Database Configuration
 builder.AddDatabaseConfigurationServices();
 
 // OpenAPI/Swagger Configuration
 builder.AddOpenApiConfigurationServices();
+
+// CORS Configuration
+builder.AddCorsServices();
 
 // Dependency Injection
 builder.AddSharedContextServices();
@@ -32,9 +36,9 @@ var app = builder.Build();
 app.EnsureDatabaseCreated();
 
 // Configure OpenAPI/Swagger middleware
-app.UseSwagger();
-app.UseSwaggerUI();
-
+app.UseOpenApiConfiguration();
+// Configure CORS middleware
+app.UseCorsPolicy();
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
